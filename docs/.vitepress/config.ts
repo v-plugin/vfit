@@ -21,6 +21,17 @@ export default defineConfig({
     ['meta', { property: 'og:description', content: '提供 FitContainer 组件与 v-fit 指令，轻松实现大屏数据可视化项目的自适应缩放与精确定位。' }],
     ['meta', { property: 'og:image', content: 'https://web-vfit.netlify.app/logo.svg' }],
     ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
+    [
+      'script',
+      {},
+      `var _hmt = _hmt || [];
+      (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?3f9898ae59cecad3e95da9f1499005ee";
+        var s = document.getElementsByTagName("script")[0]; 
+        s.parentNode.insertBefore(hm, s);
+      })();`
+    ]
   ],
 
   appearance: 'light',
