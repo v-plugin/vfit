@@ -15,10 +15,10 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/douyabo/vfit.git"
+    "url": "git+https://github.com/v-plugin/vfit.git"
   },
   "bugs": {
-    "url": "https://github.com/douyabo/vfit/issues"
+    "url": "https://github.com/v-plugin/vfit/issues"
   },
   "homepage": "https://web-vfit.netlify.app",
   "type": "module",

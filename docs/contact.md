@@ -11,7 +11,7 @@
 ## 文字联系方式
 
 - 官网：[https://web-vfit.netlify.app](https://web-vfit.netlify.app){target="_blank" rel="noopener"}
-- GitHub：[https://github.com/douyabo/vfit](https://github.com/douyabo/vfit){target="_blank" rel="noopener"}
+- GitHub：[https://github.com/v-plugin/vfit](https://github.com/v-plugin/vfit){target="_blank" rel="noopener"}
 - Mflow：[https://web-mflow.netlify.app/](https://web-mflow.netlify.app/){target="_blank" rel="noopener"}
 - npm 包：[https://www.npmjs.com/package/vfit](https://www.npmjs.com/package/vfit){target="_blank" rel="noopener"}
 

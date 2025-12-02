@@ -60,7 +60,7 @@ export default defineConfig({
       ]
     },
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/douyabo/vfit' }
+      { icon: 'github', link: 'https://github.com/v-plugin/vfit' }
     ],
     outline: 'deep',
     footer: {
