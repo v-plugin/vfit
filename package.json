@@ -1,0 +1,58 @@
+{
+  "name": "vfit",
+  "version": "1.0.3",
+  "description": "A tiny Vue 3 plugin to auto-fit UI scale based on container size, plus a FitContainer component for easy positioning.",
+  "keywords": [
+    "vue3",
+    "vfit",
+    "scale",
+    "responsive",
+    "container",
+    "positioning",
+    "auto-scale",
+    "vue-plugin"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/douyabo/vfit.git"
+  },
+  "bugs": {
+    "url": "https://github.com/douyabo/vfit/issues"
+  },
+  "homepage": "https://web-vfit.netlify.app",
+  "type": "module",
+  "main": "dist/fitscale.umd.js",
+  "module": "dist/fitscale.es.js",
+  "exports": {
+    ".": {
+      "types": "dist/index.d.ts",
+      "import": "dist/fitscale.es.js",
+      "require": "dist/fitscale.umd.js"
+    },
+    "./style.css": "./dist/style.css"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "vite build && tsc --emitDeclarationOnly -p tsconfig.json",
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs"
+  },
+  "pnpm": {
+    "overrides": {}
+  },
+  "peerDependencies": {
+    "vue": ">=3.3.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.0.4",
+    "terser": "^5.31.0",
+    "typescript": "^5.6.3",
+    "vite": "^5.4.0",
+    "vitepress": "^1.6.4"
+  }
+}
