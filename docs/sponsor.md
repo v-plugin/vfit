@@ -1,0 +1,36 @@
+# 赞助与支持
+
+天凉了，我想买条秋裤... 🥶
+
+## 💖 赞助方式
+
+<div class="sponsor-grid">
+  <div class="sponsor-card">
+    <div class="sponsor-title">微信支付</div>
+    <img class="sponsor-img" src="/sponsor/wechat-pay.jpg" alt="微信支付" />
+    <div class="sponsor-desc">扫一扫，赞助一斤毛线</div>
+  </div>
+  <!-- <div class="sponsor-card">
+    <div class="sponsor-title">支付宝</div>
+    <img class="sponsor-img" src="/sponsor/alipay.jpg" alt="支付宝" />
+    <div class="sponsor-desc">感谢您的慷慨支持 🌟</div>
+  </div> -->
+</div>
+
+::: tip
+如果您进行了赞助，可以在备注中留下您的 GitHub 账号或昵称，我会将其添加到下方的赞助者列表中（每周末更新）。
+:::
+
+## 🌟 赞助者列表
+
+感谢以下朋友的慷慨支持（排名不分先后）：
+
+| 赞助者 | 金额 | 备注 |
+| :--- | :--- | :--- |
+| 山东前途数字科技有限公司 | ¥ 1000.00 | 感谢总部支持 ❤️ |
+| 梅子酒 | ¥ 5.00 | ⚡️ |
+| 捕风的鱼摆摆 | ¥ 6.66 | 加油奥利给 |
+| 前端小趴菜 | ¥ 2 | 加油！ |
+| 切图仔9527 | ¥ 9.99 | 加油！ |
+
+

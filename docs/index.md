@@ -1,6 +1,6 @@
 ---
 layout: home
-title: vfit - Vue 3 大屏适配解决方案
+title: vfit.js
 head:
   - - meta
     - name: description
@@ -9,7 +9,7 @@ head:
     - name: keywords
       content: vfit, vue3, fit-container, 大屏适配, 数据可视化, 自动缩放
 hero:
-  name: vfit
+  name: vfit.js
   text: Vue 3 的轻量缩放与定位解决方案
   tagline: 保持比例与位置一致，快速适配不同分辨率
   image:

@@ -2,7 +2,7 @@ import { defineConfig } from 'vitepress'
 
 export default defineConfig({
   lang: 'zh-CN',
-  title: 'vfit',
+  title: 'vfit.js',
   description: 'Vue 3 的轻量缩放与定位解决方案，提供 FitContainer 组件与 v-fit 指令，支持大屏适配、自动缩放与像素级定位。',
   
   // SEO & URL Optimization
@@ -41,7 +41,9 @@ export default defineConfig({
       { text: '指南', link: '/guide/getting-started' },
       { text: 'API', link: '/guide/api' },
       { text: '示例', link: '/recipes' },
+    
       { text: '联系', link: '/contact' },
+        { text: '赞助', link: '/sponsor' },
       {
         text: '生态链接',
         items: [
