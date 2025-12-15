@@ -31,7 +31,7 @@ const fitScale = inject(FitScaleKey, ref(1))
 
 watch([() => props.scale, fitScale], () => {
   const s = props.scale && props.scale > 0 ? props.scale : fitScale?.value ?? 1
-  position.scale = `scale(${s})`
+  position.scale = `scale(${s}) translateZ(0)`
   const styleKey = ['top', 'bottom', 'left', 'right']
   styleKey.forEach((key) => {
     const val = (props as any)[key]
@@ -59,5 +59,7 @@ watch([() => props.scale, fitScale], () => {
   transform-origin: 0 0;
   z-index: 300;
   will-change: transform;
+  backface-visibility: hidden;
+  perspective: 1000px;
 }
 </style>
