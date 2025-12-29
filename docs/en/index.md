@@ -23,12 +23,12 @@ hero:
       text: View Examples
       link: /en/recipes
 features:
+  - icon: 🧩
+    title: Rich Components
+    details: Built-in 5 dedicated components for top-left, top-right, bottom-left, bottom-right, and center, making development more efficient.
   - icon: 🖥️
     title: Big Screen Dedicated
     details: Optimized for big screen scenarios, supporting multiple resolution adaptations.
-  - icon: 🎯
-    title: Precise Positioning
-    details: Pixel/Percentage dual coordinate model, restoring design layout.
   - icon: ⚡
     title: Fast Integration
     details: Zero configuration out of the box, supporting Vue 3 directives and components.

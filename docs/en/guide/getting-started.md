@@ -18,12 +18,15 @@ app.use(createFitScale({ target: '#app', designHeight: 1080, designWidth: 1920, 
 
 ## Your First Container
 
+We recommend using **Dedicated Positioning Components** (like `vfit-lt`) for quick layout, as they are more concise and easier to maintain.
+
 ```vue
 <template>
   <div class="viewport">
-    <FitContainer :top="90" :left="90" unit="px">
+    <!-- Top-left corner, 90px from top/left -->
+    <vfit-lt :top="90" :left="90">
       <div class="box">Content</div>
-    </FitContainer>
+    </vfit-lt>
   </div>
 </template>
 
@@ -32,6 +35,8 @@ app.use(createFitScale({ target: '#app', designHeight: 1080, designWidth: 1920, 
 .box { width: 120px; height: 80px; }
 </style>
 ```
+
+> If you need compatibility with old code or complex positioning, you can also use the [FitContainer](/en/guide/fitcontainer) general component.
 
 ## Key Points
 

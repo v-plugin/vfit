@@ -1,9 +1,14 @@
 import type { App, Ref } from 'vue'
 import { ref, inject } from 'vue'
 import { observeScale } from './scale'
+import { FitScaleKey, useFitScale } from './useFitScale'
 import FitContainer from './components/FitContainer.vue'
+import VFitLT from './components/VFitLT.vue'
+import VFitRT from './components/VFitRT.vue'
+import VFitLB from './components/VFitLB.vue'
+import VFitRB from './components/VFitRB.vue'
+import VFitCenter from './components/VFitCenter.vue'
 
-export const FitScaleKey = Symbol('FitScale')
 
 export type FitScaleOptions = { target?: string | HTMLElement; designHeight?: number; designWidth?: number; scaleMode?: 'height' | 'width' | 'auto' }
 
@@ -18,13 +23,13 @@ export function createFitScale(options: FitScaleOptions = {}) {
       app.provide(FitScaleKey, fitScale)
       ;(app.config.globalProperties as any).$fitScale = fitScale
       app.component('FitContainer', FitContainer)
+      app.component('vfit-lt', VFitLT)
+      app.component('vfit-rt', VFitRT)
+      app.component('vfit-lb', VFitLB)
+      app.component('vfit-rb', VFitRB)
+      app.component('vfit-center', VFitCenter)
     }
   }
 }
 
-export function useFitScale(): Ref<number> {
-  const injectedFitScale = inject<Ref<number>>(FitScaleKey, ref(1))
-  return injectedFitScale
-}
-
-export { FitContainer }
+export { FitContainer, VFitLT, VFitRT, VFitLB, VFitRB, VFitCenter, useFitScale }

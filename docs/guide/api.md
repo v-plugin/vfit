@@ -15,6 +15,19 @@
 在组件内获取当前缩放值 `Ref<number>`。
 
 
+## 专用定位组件
+
+包含 `<vfit-lt>`, `<vfit-rt>`, `<vfit-lb>`, `<vfit-rb>`, `<vfit-center>`。
+
+**四角组件属性：**
+- `<vfit-lt>`: `top`, `left`, `unit`, `scale`, `z`
+- `<vfit-rt>`: `top`, `right`, `unit`, `scale`, `z`
+- `<vfit-lb>`: `bottom`, `left`, `unit`, `scale`, `z`
+- `<vfit-rb>`: `bottom`, `right`, `unit`, `scale`, `z`
+
+**居中组件属性：**
+- `<vfit-center>`: `scale`, `z` (自动绝对居中，无需定位参数)
+
 ## `FitContainer` 组件
 
 - `top/bottom/left/right?: number`

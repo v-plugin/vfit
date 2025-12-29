@@ -45,6 +45,7 @@ export default defineConfig({
           { text: '指南', link: '/guide/getting-started' },
           { text: 'API', link: '/guide/api' },
           { text: '示例', link: '/recipes' },
+          { text: '更新日志', link: '/changelog' },
           { text: '联系', link: '/contact' },
           { text: '赞助', link: '/sponsor' },
           {
@@ -88,6 +89,7 @@ export default defineConfig({
           { text: 'Guide', link: '/en/guide/getting-started' },
           { text: 'API', link: '/en/guide/api' },
           { text: 'Examples', link: '/en/recipes' },
+          { text: 'Changelog', link: '/en/changelog' },
           { text: 'Contact', link: '/en/contact' },
           { text: 'Sponsor', link: '/en/sponsor' },
           {

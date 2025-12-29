@@ -3,29 +3,29 @@ import { useFitPosition } from '../useFitPosition'
 
 const props = defineProps({
   scale: { type: Number, default: 0 },
-  top: { type: Number },
   bottom: { type: Number },
-  left: { type: Number },
   right: { type: Number },
   unit: { type: String, default: 'px' },
   z: { type: Number, default: 300 }
 })
 
-const { position, origin } = useFitPosition(props)
+const { position, origin } = useFitPosition(props, {
+  origin: '100% 100%',
+  scaleKeys: ['bottom', 'right']
+})
 </script>
 
 <template>
-  <div class="fit-container"
-    :style="{ transform: position.scale, transformOrigin: origin, top: position.top, bottom: position.bottom, left: position.left, right: position.right, zIndex: props.z }">
+  <div class="vfit-rb"
+    :style="{ transform: position.scale, transformOrigin: origin, bottom: position.bottom, right: position.right, zIndex: props.z }">
     <slot />
   </div>
-
 </template>
 
 <style scoped>
-.fit-container {
+.vfit-rb {
   position: absolute;
-  transform-origin: 0 0;
+  transform-origin: 100% 100%;
   z-index: 300;
   will-change: transform;
   backface-visibility: hidden;

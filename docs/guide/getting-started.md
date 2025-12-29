@@ -18,12 +18,15 @@ app.use(createFitScale({ target: '#app', designHeight: 1080, designWidth: 1920, 
 
 ## 第一个容器
 
+推荐使用 **专用定位组件**（如 `vfit-lt`）来快速布局，它更简洁且易于维护。
+
 ```vue
 <template>
   <div class="viewport">
-    <FitContainer :top="90" :left="90" unit="px">
+    <!-- 左上角，距离顶部/左侧 90px -->
+    <vfit-lt :top="90" :left="90">
       <div class="box">内容</div>
-    </FitContainer>
+    </vfit-lt>
   </div>
 </template>
 
@@ -32,6 +35,8 @@ app.use(createFitScale({ target: '#app', designHeight: 1080, designWidth: 1920, 
 .box { width: 120px; height: 80px; }
 </style>
 ```
+
+> 如果需要兼容旧代码或复杂定位，也可以使用 [FitContainer](/guide/fitcontainer) 通用组件。
 
 ## 关键点
 

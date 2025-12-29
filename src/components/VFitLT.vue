@@ -4,9 +4,7 @@ import { useFitPosition } from '../useFitPosition'
 const props = defineProps({
   scale: { type: Number, default: 0 },
   top: { type: Number },
-  bottom: { type: Number },
   left: { type: Number },
-  right: { type: Number },
   unit: { type: String, default: 'px' },
   z: { type: Number, default: 300 }
 })
@@ -15,15 +13,14 @@ const { position, origin } = useFitPosition(props)
 </script>
 
 <template>
-  <div class="fit-container"
-    :style="{ transform: position.scale, transformOrigin: origin, top: position.top, bottom: position.bottom, left: position.left, right: position.right, zIndex: props.z }">
+  <div class="vfit-lt"
+    :style="{ transform: position.scale, transformOrigin: origin, top: position.top, left: position.left, zIndex: props.z }">
     <slot />
   </div>
-
 </template>
 
 <style scoped>
-.fit-container {
+.vfit-lt {
   position: absolute;
   transform-origin: 0 0;
   z-index: 300;
