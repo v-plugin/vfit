@@ -26,9 +26,9 @@
   "module": "dist/fitscale.es.js",
   "exports": {
     ".": {
-      "types": "dist/index.d.ts",
-      "import": "dist/fitscale.es.js",
-      "require": "dist/fitscale.umd.js"
+      "types": "./dist/index.d.ts",
+      "import": "./dist/fitscale.es.js",
+      "require": "./dist/fitscale.umd.js"
     },
     "./style.css": "./dist/style.css"
   },
