@@ -1,6 +1,6 @@
 # 更新日志
 
-## v2.0.0 (2025-12-29)
+## v2.0.1 (2025-12-29)
 
 - **新增**: 引入专用定位组件 `<vfit-lt>`, `<vfit-rt>`, `<vfit-lb>`, `<vfit-rb>`, `<vfit-center>`，简化布局代码。
 - **优化**: 重构核心逻辑为 `useFitPosition` 和 `useFitScale`，提高代码复用性。

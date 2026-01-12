@@ -1,6 +1,6 @@
 # Changelog
 
-## v2.0.0 (2025-12-29)
+## v2.0.1 (2025-12-29)
 
 - **New**: Introduced dedicated positioning components `<vfit-lt>`, `<vfit-rt>`, `<vfit-lb>`, `<vfit-rb>`, `<vfit-center>` to simplify layout code.
 - **Optimization**: Refactored core logic into `useFitPosition` and `useFitScale` to improve code reusability.
