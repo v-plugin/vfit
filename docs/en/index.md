@@ -7,7 +7,7 @@ head:
       content: vfit is a visualization big screen adapter solution for Vue 3, supporting FitContainer component and v-fit directive, auto-scaling and precise positioning, perfectly adapting to various screen resolutions.
   - - meta
     - name: keywords
-      content: vfit, vue3, fit-container, big screen adapter, visualization, data visualization, auto scale
+      content: vfit, vue3, fit-container, big screen adapter, large screen, data screen, data wall, dashboard, data visualization, visualization, auto scale, responsive scaling, scale to fit, screen adaptation
 hero:
   name: vfit.js
   text: Big Screen Adapter Solution

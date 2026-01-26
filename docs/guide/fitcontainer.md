@@ -1,6 +1,6 @@
 # FitContainer
 
-`FitContainer` 是绝对定位并按全局缩放值进行缩放的容器组件。
+`FitContainer` 是绝对定位并按全局缩放值进行缩放的容器组件。常见四角或居中布局推荐使用专用定位组件（`vfit-lt` / `vfit-rt` / `vfit-lb` / `vfit-rb` / `vfit-center`），代码更简洁。
 
 ## 属性
 

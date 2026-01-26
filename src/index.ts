@@ -1,7 +1,7 @@
-import type { App, Ref } from 'vue'
-import { ref, inject } from 'vue'
+import type { App } from 'vue'
+import { ref } from 'vue'
 import { observeScale } from './scale'
-import { FitScaleKey, useFitScale } from './useFitScale'
+import { FitScaleKey } from './useFitScale'
 import FitContainer from './components/FitContainer.vue'
 import VFitLT from './components/VFitLT.vue'
 import VFitRT from './components/VFitRT.vue'
@@ -32,4 +32,5 @@ export function createFitScale(options: FitScaleOptions = {}) {
   }
 }
 
-export { FitContainer, VFitLT, VFitRT, VFitLB, VFitRB, VFitCenter, useFitScale }
+export { FitContainer, VFitLT, VFitRT, VFitLB, VFitRB, VFitCenter }
+export { useFitScale } from './useFitScale'

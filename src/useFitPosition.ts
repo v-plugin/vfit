@@ -7,12 +7,11 @@ export function useFitPosition(props: any, options: {
   extraTransform?: string
 } = {}) {
   const position = reactive({
-    scale: `scale(1)`,
+    scale: `scale(1) translateZ(0)`,
     top: 'auto',
     bottom: 'auto',
     left: 'auto',
-    right: 'auto',
-    translate: 'translate(0, 0)'
+    right: 'auto'
   })
 
   const origin = computed(() => {
@@ -28,9 +27,18 @@ export function useFitPosition(props: any, options: {
 
   const fitScale = inject(FitScaleKey, ref(1))
 
-  watch([() => props.scale, fitScale], () => {
+  watch([
+    () => props.scale,
+    () => props.unit,
+    () => props.top,
+    () => props.bottom,
+    () => props.left,
+    () => props.right,
+    fitScale
+  ], () => {
     const s = props.scale && props.scale > 0 ? props.scale : fitScale?.value ?? 1
-    position.scale = `scale(${s}) translateZ(0)`
+    const baseTransform = `scale(${s}) translateZ(0)`
+    position.scale = options.extraTransform ? `${baseTransform} ${options.extraTransform}` : baseTransform
     const styleKey = ['top', 'bottom', 'left', 'right']
     styleKey.forEach((key) => {
       const val = (props as any)[key]

@@ -4,7 +4,7 @@
 
 作者：一颗烂土豆
 
-Vue 3 的轻量缩放与定位解决方案。通过插件提供全局缩放值，并内置 `FitContainer` 组件，让页面元素在不同分辨率下保持比例与位置一致。
+Vue 3 的轻量缩放与定位解决方案。通过插件提供全局缩放值，并内置 `FitContainer` 与 5 个专用定位组件，让页面元素在不同分辨率下保持比例与位置一致。
 
 ## 安装与初始化
 
@@ -27,24 +27,23 @@ app.use(createFitScale({ target: '#app', designHeight: 1080, designWidth: 1920, 
   - `%`：位置不随缩放变化，适合居中/相对位置
   - `px`：位置随缩放乘积变化，适合固定像素布局
 
-### 居中（百分比）
+### 居中（专用组件）
 
 ```vue
 <template>
   <div class="viewport">
-    <FitContainer :top="50" :left="50" unit="%">
+    <vfit-center>
       <div class="card">内容</div>
-    </FitContainer>
+    </vfit-center>
   </div>
 </template>
 
 <style scoped>
 .viewport { position: relative; width: 100%; height: 100vh; }
-.card { transform: translate(-50%, -50%); }
 </style>
 ```
 
-要点：`top/left` 为百分比时，位置不受缩放影响；仅内部内容按比例缩放。
+要点：居中组件自动完成定位与居中，内部内容按比例缩放。
 
 ### 像素定位（随缩放）
 
@@ -80,6 +79,10 @@ app.use(createFitScale({ target: '#app', designHeight: 1080, designWidth: 1920, 
   - `top/bottom/left/right?: number`
   - `unit?: 'px' | '%'`（默认 `px`）
   - `scale?: number`（覆盖全局缩放）
+  - `z?: number`（默认 `300`）
+- 专用定位组件：
+  - `<vfit-lt>`、`<vfit-rt>`、`<vfit-lb>`、`<vfit-rb>`：支持 `top/left/right/bottom`、`unit`、`scale`、`z`
+  - `<vfit-center>`：支持 `scale`、`z`
 
 ## 小贴士
 

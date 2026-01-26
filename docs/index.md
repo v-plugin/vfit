@@ -7,7 +7,7 @@ head:
       content: vfit 是一个 Vue 3 的可视化大屏适配方案，支持 FitContainer 组件和 v-fit 指令，自动缩放与精确定位，完美适配各种屏幕分辨率。
   - - meta
     - name: keywords
-      content: vfit, vue3, fit-container, 大屏适配, 可视化大屏, 数据可视化, 自动缩放
+      content: vfit, vue3, fit-container, 大屏适配, 可视化大屏, 数据大屏, 大屏可视化, 屏幕自适应, 自适应缩放, 大屏布局, 可视化适配, 屏幕缩放, 数据可视化, 自动缩放
 hero:
   name: vfit.js
   text: 可视化大屏适配方案

@@ -1,6 +1,6 @@
 # FitContainer
 
-`FitContainer` is a container component that is absolutely positioned and scaled according to the global scale value.
+`FitContainer` is a container component that is absolutely positioned and scaled according to the global scale value. For common corner or center layouts, prefer the dedicated components (`vfit-lt` / `vfit-rt` / `vfit-lb` / `vfit-rb` / `vfit-center`) for cleaner code.
 
 ## Props
 
