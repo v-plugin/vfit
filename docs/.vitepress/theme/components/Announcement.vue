@@ -5,7 +5,7 @@ const show = ref(false)
 
 onMounted(() => {
   // Check if already seen in this session
-  const hasSeen = sessionStorage.getItem('vfit-raychart-announcement')
+  const hasSeen = sessionStorage.getItem('vfit-migration-announcement')
   if (!hasSeen) {
     show.value = true
   }
@@ -13,12 +13,12 @@ onMounted(() => {
 
 const close = () => {
   show.value = false
-  sessionStorage.setItem('vfit-raychart-announcement', 'true')
+  sessionStorage.setItem('vfit-migration-announcement', 'true')
 }
 
 const go = () => {
   close()
-  window.open('https://chart3js.netlify.app/', '_blank')
+  window.open('https://vfit.raychart.cn/', '_blank')
 }
 </script>
 
@@ -26,13 +26,13 @@ const go = () => {
   <div v-if="show" class="announcement-overlay">
     <div class="announcement-modal">
       <div class="modal-content">
-        <h3>🚀 新生态工具发布</h3>
+        <h3>� 网站迁移通知</h3>
         <p class="desc">
-          <strong>RayChart.js</strong><br>
-          打造好用的 Web 3D 可视化图表引擎
+          vfit 官网已迁移至新域名<br>
+          <strong>https://vfit.raychart.cn/</strong>
         </p>
         <div class="actions">
-          <button class="btn primary" @click="go">立即查看</button>
+          <button class="btn primary" @click="go">前往新网站</button>
           <button class="btn secondary" @click="close">继续浏览</button>
         </div>
       </div>

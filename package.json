@@ -1,6 +1,6 @@
 {
   "name": "vfit",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "A tiny Vue 3 plugin to auto-fit UI scale based on container size, plus a FitContainer component for easy positioning.",
   "keywords": [
     "vue3",
@@ -39,7 +39,7 @@
   "bugs": {
     "url": "https://github.com/v-plugin/vfit/issues"
   },
-  "homepage": "https://web-vfit.netlify.app",
+  "homepage": "https://vfit.raychart.cn/",
   "type": "module",
   "main": "dist/fitscale.umd.js",
   "module": "dist/fitscale.es.js",

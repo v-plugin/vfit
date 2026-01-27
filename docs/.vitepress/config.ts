@@ -52,7 +52,7 @@ export default defineConfig({
             text: '生态链接',
             items: [
               { text: 'vfit-react', link: 'https://www.npmjs.com/package/vfit-react' },
-              { text: 'chart3.js', link: 'https://chart3js.netlify.app/' },
+              { text: 'RayChart.js', link: 'https://chart3js.netlify.app/' },
               { text: 'Mflow', link: 'https://web-mflow.netlify.app/' },
          
               { text: '生态卡片页', link: '/ecosystem' }
