@@ -15,7 +15,7 @@ export default defineConfig({
   head: [
     ['link', { rel: 'icon', href: '/logo.svg' }],
     ['meta', { name: 'keywords', content: 'vue3, vfit, scale, fit-container, data-visualization, dashboard, big-screen, 大屏适配, 可视化大屏, 缩放, 定位' }],
-    ['meta', { name: 'author', content: '一颗烂土豆' }],
+    ['meta', { name: 'author', content: 'RayChart' }],
     ['meta', { property: 'og:type', content: 'website' }],
     ['meta', { property: 'og:title', content: 'vfit - Vue 3 可视化大屏适配方案' }],
     ['meta', { property: 'og:description', content: '专为大屏数据可视化设计，一键实现全屏自适应与精准定位。' }],
@@ -52,8 +52,8 @@ export default defineConfig({
             text: '生态链接',
             items: [
               { text: 'vfit-react', link: 'https://www.npmjs.com/package/vfit-react' },
-              { text: 'RayChart.js', link: 'https://chart3js.netlify.app/' },
-              { text: 'Mflow', link: 'https://web-mflow.netlify.app/' },
+              { text: 'RayChart.js', link: 'https://raychart.cn/' },
+              { text: 'Mflow', link: 'https://mflow.raychart.cn/' },
          
               { text: '生态卡片页', link: '/ecosystem' }
             ]
@@ -69,8 +69,8 @@ export default defineConfig({
           ]
         },
         footer: {
-          message: '作者：一颗烂土豆 · MIT Licensed',
-          copyright: '© 2025 一颗烂土豆'
+          message: '作者：RayChart · MIT Licensed',
+          copyright: '© 2025 RayChart'
         },
         outline: { label: '本页目录' },
         docFooter: { prev: '上一篇', next: '下一篇' },
@@ -98,6 +98,7 @@ export default defineConfig({
             text: 'Ecosystem',
             items: [
               { text: 'vfit-react', link: 'https://www.npmjs.com/package/vfit-react' },
+              { text: 'RayChart.js', link: 'https://raychart.cn/' },
               { text: 'Mflow', link: 'https://web-mflow.netlify.app/' },
               { text: 'Ecosystem Page', link: '/en/ecosystem' }
             ]
@@ -113,8 +114,8 @@ export default defineConfig({
           ]
         },
         footer: {
-          message: 'Author: 一颗烂土豆 · MIT Licensed',
-          copyright: '© 2025 一颗烂土豆'
+          message: 'Author: RayChart · MIT Licensed',
+          copyright: '© 2025 RayChart'
         },
         outline: { label: 'On this page' },
         docFooter: { prev: 'Previous', next: 'Next' },

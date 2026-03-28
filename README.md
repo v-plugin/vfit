@@ -1,8 +1,10 @@
 # vfit
 
-官网：https://web-vfit.netlify.app
+官网：https://vfit.raychart.cn/
 
-作者：一颗烂土豆
+公众号：RayChart（获取全网最全的大屏适配调研方案）
+
+作者：RayChart
 
 Vue 3 的轻量缩放与定位解决方案。通过插件提供全局缩放值，并内置 `FitContainer` 与 5 个专用定位组件，让页面元素在不同分辨率下保持比例与位置一致。
 

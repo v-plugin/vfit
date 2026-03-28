@@ -82,3 +82,63 @@
 .sponsor-img { width: 220px; height: 220px; border-radius: 12px; background: #fff; padding: 10px; object-fit: contain; }
 .sponsor-title { font-size: 18px; font-weight: 600; color: var(--vp-c-text-1); }
 .sponsor-desc { font-size: 14px; color: var(--vp-c-text-2); text-align: center; line-height: 1.5; }
+
+.vfit-popup-mask {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.45);
+}
+
+.vfit-popup {
+  width: min(520px, calc(100vw - 32px));
+  border-radius: 16px;
+  border: 1px solid var(--vp-c-divider);
+  background: var(--vp-c-bg);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.3);
+  padding: 20px;
+}
+
+.vfit-popup-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--vp-c-text-1);
+}
+
+.vfit-popup-desc {
+  margin-top: 10px;
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--vp-c-text-2);
+}
+
+.vfit-popup-actions {
+  margin-top: 16px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.vfit-popup-btn {
+  border: 1px solid transparent;
+  border-radius: 10px;
+  padding: 8px 14px;
+  font-size: 14px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.vfit-popup-btn.ghost {
+  border-color: var(--vp-c-divider);
+  background: transparent;
+  color: var(--vp-c-text-2);
+}
+
+.vfit-popup-btn.primary {
+  border-color: var(--vp-c-brand-1);
+  background: var(--vp-c-brand-1);
+  color: #fff;
+}
