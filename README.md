@@ -17,7 +17,7 @@ npm i vfit
 ```ts
 // main.ts
 import { createFitScale } from 'vfit'
-import 'vfit/style.css'
+
 
 app.use(createFitScale({ target: '#app', designHeight: 1080, designWidth: 1920, scaleMode: 'auto' }))
 ```

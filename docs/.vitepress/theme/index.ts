@@ -1,10 +1,26 @@
 import DefaultTheme from 'vitepress/theme'
+import type { Theme } from 'vitepress'
 import { computed, defineComponent, h, onMounted, ref } from 'vue'
 import { useData } from 'vitepress'
 import './style.css'
+import VFitLT from '../../../src/components/VFitLT.vue'
+import VFitRT from '../../../src/components/VFitRT.vue'
+import VFitLB from '../../../src/components/VFitLB.vue'
+import VFitRB from '../../../src/components/VFitRB.vue'
+import VFitCenter from '../../../src/components/VFitCenter.vue'
+import '../../../src/style.css'
+import LayoutDemo from '../components/LayoutDemo.vue'
 
 export default {
   ...DefaultTheme,
+  enhanceApp({ app }) {
+    app.component('vfit-lt', VFitLT)
+    app.component('vfit-rt', VFitRT)
+    app.component('vfit-lb', VFitLB)
+    app.component('vfit-rb', VFitRB)
+    app.component('vfit-center', VFitCenter)
+    app.component('LayoutDemo', LayoutDemo)
+  },
   Layout: defineComponent({
     name: 'VfitLayout',
     setup() {
@@ -81,4 +97,4 @@ export default {
       ])
     }
   })
-}
+} satisfies Theme

@@ -1,155 +1,237 @@
+---
+aside: false
+---
+
 # 示例与场景
 
-这里展示了常见的大屏布局写法。你可以根据喜好，选择**简洁版（专用组件）**或**通用版（通用组件）**。
+<style>
+.stage {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  background: #010a1b;
+  border-radius: 8px;
+  margin: 8px 0;
+}
+.stage .grid {
+  position: absolute; inset: 0;
+  background-image: linear-gradient(rgba(0,228,255,.06) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(0,228,255,.06) 1px, transparent 1px);
+  background-size: 30px 30px;
+}
+.stage .box {
+  position: absolute;
+  color: #fff; font-weight: bold;
+  font-size: 12px;
+  border-radius: 4px;
+  padding: 6px 14px;
+  white-space: nowrap;
+}
+.stage .box.tl { top: 16px; left: 16px; background: rgba(0,228,255,.35); border: 1px solid #00e4ff; }
+.stage .box.tr { top: 16px; right: 16px; background: rgba(245,158,11,.35); border: 1px solid #f59e0b; }
+.stage .box.bl { bottom: 16px; left: 16px; background: rgba(16,185,129,.35); border: 1px solid #10b981; }
+.stage .box.br { bottom: 16px; right: 16px; background: rgba(59,130,246,.35); border: 1px solid #3b82f6; }
+.stage .box.ct {
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(168,85,247,.35);
+  border: 2px dashed #a855f7;
+  font-size: 14px;
+  padding: 12px 28px;
+}
+.stage .tag {
+  position: absolute;
+  top: 6px; right: 8px;
+  font-size: 10px;
+  color: rgba(255,255,255,.35);
+  font-family: monospace;
+}
+</style>
 
-::: tip 提示
-这两种写法的效果和性能完全一样，只是代码风格不同。
-:::
+## 🎮 交互式布局实验台
 
-## 1. 左上角 (Logo、天气)
+下方使用真正的 `vfit-lt` / `vfit-rt` / `vfit-lb` / `vfit-rb` / `vfit-center` 组件。
 
-适用于放置 Logo、天气信息等内容。
+**拖拽滑块、切换参数**，观察 5 个定位组件在不同容器尺寸、缩放倍数、间距和单位下的实时变化。
 
-**✨ 简洁版 (vfit-lt)**
-省去了单位，代码更短。
-```vue
-<vfit-lt :top="20" :left="20">
-  <WeatherWidget />
-</vfit-lt>
-```
-
-**🔧 通用版 (FitContainer)**
-需要手动写 `unit="px"`。
-```vue
-<FitContainer :top="20" :left="20" unit="px">
-  <WeatherWidget />
-</FitContainer>
-```
+<ClientOnly>
+  <LayoutDemo />
+</ClientOnly>
 
 ---
 
-## 2. 右上角 (时间、状态)
+## 1. 左上角 — `vfit-lt`
 
-适用于放置系统时间、运行状态等。
+`top` + `left` 均乘以全局 `scale`，`transform-origin` 自动设为 `0 0`。
 
-**✨ 简洁版 (vfit-rt)**
-自动设置了缩放原点（右上角），不用操心。
+```vue
+<vfit-lt :top="20" :left="20">
+  <Logo />
+</vfit-lt>
+```
+
+<div class="stage">
+  <div class="grid"></div>
+  <div class="box tl">vfit-lt</div>
+  <div class="tag">top:16px left:16px</div>
+</div>
+
+---
+
+## 2. 右上角 — `vfit-rt`
+
+`top` + `right` 均乘以 `scale`，`transform-origin` 自动设为 `100% 0`。
+
 ```vue
 <vfit-rt :top="20" :right="20">
-  <TimeWidget />
+  <Clock />
 </vfit-rt>
 ```
 
-**🔧 通用版 (FitContainer)**
-```vue
-<FitContainer :top="20" :right="20" unit="px">
-  <TimeWidget />
-</FitContainer>
-```
+<div class="stage">
+  <div class="grid"></div>
+  <div class="box tr">vfit-rt</div>
+  <div class="tag">top:16px right:16px</div>
+</div>
 
 ---
 
-## 3. 左下角 (图表、列表)
+## 3. 左下角 — `vfit-lb`
 
-适用于辅助图表、滚动数据列表。
+`bottom` + `left` 均乘以 `scale`，`transform-origin` 自动设为 `0 100%`。
 
-**✨ 简洁版 (vfit-lb)**
 ```vue
 <vfit-lb :bottom="20" :left="20">
-  <DataPanel />
+  <Chart />
 </vfit-lb>
 ```
 
-**🔧 通用版 (FitContainer)**
-```vue
-<FitContainer :bottom="20" :left="20" unit="px">
-  <DataPanel />
-</FitContainer>
-```
+<div class="stage">
+  <div class="grid"></div>
+  <div class="box bl">vfit-lb</div>
+  <div class="tag">bottom:16px left:16px</div>
+</div>
 
 ---
 
-## 4. 右下角 (控制面板)
+## 4. 右下角 — `vfit-rb`
 
-适用于放置操作按钮、图例说明。
+`bottom` + `right` 均乘以 `scale`，`transform-origin` 自动设为 `100% 100%`。
 
-**✨ 简洁版 (vfit-rb)**
 ```vue
 <vfit-rb :bottom="20" :right="20">
-  <ControlPanel />
+  <Panel />
 </vfit-rb>
 ```
 
-**🔧 通用版 (FitContainer)**
-```vue
-<FitContainer :bottom="20" :right="20" unit="px">
-  <ControlPanel />
-</FitContainer>
-```
+<div class="stage">
+  <div class="grid"></div>
+  <div class="box br">vfit-rb</div>
+  <div class="tag">bottom:16px right:16px</div>
+</div>
 
 ---
 
-## 5. 屏幕正中心 (主图、地图)
+## 5. 居中 — `vfit-center`
 
-适用于核心数据展示、3D 地图容器。
+自动 `top:50%; left:50%` + `translate(-50%,-50%)`，内容随 scale 缩放。
 
-**✨ 简洁版 (vfit-center)**
-**强烈推荐**！它自动帮你把内容完美居中，不需要写复杂的 CSS。
 ```vue
 <vfit-center>
-  <MainChart />
+  <MainMap />
 </vfit-center>
 ```
 
-**🔧 通用版 (FitContainer)**
-你需要自己写 CSS 变换来实现居中。
+<div class="stage">
+  <div class="grid"></div>
+  <div class="box ct">vfit-center</div>
+</div>
+
+---
+
+## 6. 百分比单位 `unit="%"`
+
+百分比模式下四边间距不随 `scale` 变化，仅内容缩放。
+
+```vue
+<vfit-lt :top="10" :left="10" unit="%">
+  <Banner />
+</vfit-lt>
+```
+
+<div class="stage">
+  <div class="grid"></div>
+  <div class="box tl" style="top:10%;left:10%">10%,10%</div>
+  <div class="tag">top:10% left:10%</div>
+</div>
+
+---
+
+## 7. 自定义缩放 `:scale`
+
+传 `:scale` 覆盖全局值，传 `0` 或不传则走全局 `fitScale`。
+
+```vue
+<vfit-lt :top="30" :left="30" :scale="0.5">
+  <MiniWidget />
+</vfit-lt>
+```
+
+<div class="stage">
+  <div class="grid"></div>
+  <div class="box tl" style="top:15px;left:15px;width:60px;height:28px;font-size:10px">scale 0.5</div>
+  <div class="tag">top:30px left:30px scale:0.5 → 实际 15px</div>
+</div>
+
+---
+
+## 8. 层级 `:z`
+
+`z` 越大越靠前，默认 `300`。
+
+```vue
+<vfit-lt :top="10" :left="10" :z="999">
+  <TopLayer />
+</vfit-lt>
+<vfit-lt :top="30" :left="30" :z="100">
+  <BottomLayer />
+</vfit-lt>
+```
+
+<div class="stage">
+  <div class="grid"></div>
+  <div class="box" style="top:10px;left:10px;z-index:999;background:rgba(0,228,255,.6);border:2px solid #00e4ff;width:100px;height:36px;font-size:11px">z=999 (上层)</div>
+  <div class="box" style="top:26px;left:26px;z-index:100;background:rgba(168,85,247,.5);border:1px solid #a855f7;width:90px;height:32px;font-size:10px">z=100 (下层)</div>
+  <div class="tag">z=999 覆盖在 z=100 上方</div>
+</div>
+
+---
+
+## 9. 通用组件 `FitContainer`
+
+需要四边同用或兼容旧代码时使用：
+
+```vue
+<FitContainer :top="20" :right="20" :bottom="20" :left="20" unit="px">
+  四边撑满
+</FitContainer>
+```
+
+<div class="stage">
+  <div class="grid"></div>
+  <div class="box" style="inset:14px;display:flex;align-items:center;justify-content:center;background:rgba(0,228,255,.1);border:1px dashed #00e4ff;font-size:13px;border-radius:4px">FitContainer 四边撑满</div>
+  <div class="tag">top:14 bottom:14 left:14 right:14</div>
+</div>
+
 ```vue
 <FitContainer :top="50" :left="50" unit="%">
-  <!-- 手动居中 -->
-  <div style="transform: translate(-50%, -50%);">
-    <MainChart />
-  </div>
+  <div style="transform:translate(-50%,-50%)">百分比居中</div>
 </FitContainer>
 ```
 
----
-
-## 6. 特殊需求：自定义缩放
-
-如果你想让某个组件缩放得小一点（比如只缩放 80%），或者干脆不缩放。
-
-**✨ 简洁版**
-```vue
-<!-- 强制缩小为 0.8 -->
-<vfit-lt :top="100" :left="100" :scale="0.8">
-  <MiniMap />
-</vfit-lt>
-```
-
-**🔧 通用版**
-```vue
-<FitContainer :top="100" :left="100" unit="px" :scale="0.8">
-  <MiniMap />
-</FitContainer>
-```
-
----
-
-## 7. 特殊需求：修改单位
-
-简洁版组件默认使用 `px` 单位。如果你想使用百分比 `%` 进行定位，可以通过 `unit` 属性覆盖。
-
-**✨ 简洁版**
-```vue
-<!-- 使用 10% 的距离定位 -->
-<vfit-lt :top="10" :left="10" unit="%">
-  <Logo />
-</vfit-lt>
-```
-
-**🔧 通用版**
-```vue
-<FitContainer :top="10" :left="10" unit="%">
-  <Logo />
-</FitContainer>
+<div class="stage">
+  <div class="grid"></div>
+  <div class="box ct">百分比居中</div>
+  <div class="tag">top:50% left:50%</div>
+</div>
 ```
