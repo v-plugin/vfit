@@ -4,7 +4,7 @@
   <div class="contact-card">
     <img class="contact-img" src="/contact/wechat.jpg" alt="公众号二维码" />
     <div class="contact-title">公众号</div>
-    <div class="contact-desc">扫码关注公众号 RayChart，获取全网最全的大屏适配调研方案与最新更新。</div>
+    <div class="contact-desc">扫码关注公众号「土豆的孪生可视化」（已认证自媒体），获取全网最全的大屏适配调研方案与最新更新。</div>
   </div>
 </div>
 

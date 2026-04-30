@@ -4,7 +4,7 @@
   <div class="contact-card">
     <img class="contact-img" src="/contact/wechat.jpg" alt="WeChat Official Account QR Code" />
     <div class="contact-title">WeChat Official Account</div>
-    <div class="contact-desc">Follow RayChart on WeChat to get the most comprehensive big-screen adaptation research guide and latest updates.</div>
+    <div class="contact-desc">Follow「土豆的孪生可视化」(certified self-media) on WeChat to get the most comprehensive big-screen adaptation research guide and latest updates.</div>
   </div>
 </div>
 
