@@ -2,6 +2,7 @@
 import { useFitPosition } from '../useFitPosition'
 
 const props = defineProps({
+  /* 自定义缩放因子，传 0 或不传时使用全局 fitScale */
   scale: { type: Number, default: 0 },
   z: { type: Number, default: 300 }
 })
@@ -14,7 +15,7 @@ const { position, origin } = useFitPosition(props, {
 </script>
 
 <template>
-  <div class="vfit-center"
+  <div class="vfit-base vfit-center"
     :style="{ transform: position.scale, transformOrigin: origin, zIndex: props.z }">
     <slot />
   </div>
@@ -22,13 +23,8 @@ const { position, origin } = useFitPosition(props, {
 
 <style scoped>
 .vfit-center {
-  position: absolute;
   top: 50%;
   left: 50%;
   transform-origin: 0 0;
-  z-index: 300;
-  will-change: transform;
-  backface-visibility: hidden;
-  perspective: 1000px;
 }
 </style>

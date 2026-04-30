@@ -8,6 +8,7 @@ import VFitRT from './components/VFitRT.vue'
 import VFitLB from './components/VFitLB.vue'
 import VFitRB from './components/VFitRB.vue'
 import VFitCenter from './components/VFitCenter.vue'
+import './style.css'
 
 
 export type FitScaleOptions = { target?: string | HTMLElement; designHeight?: number; designWidth?: number; scaleMode?: 'height' | 'width' | 'auto' }
@@ -17,11 +18,15 @@ export function createFitScale(options: FitScaleOptions = {}) {
   let fitScaleObserver: ResizeObserver | null = null
   return {
     install(app: App) {
-      const rootEl = typeof options.target === 'string' ? document.querySelector(options.target) : options.target
-      const target = (rootEl || document.querySelector('#app')) as HTMLElement
+      const rootEl = typeof options.target === 'string' ? document.querySelector(options.target) : options.target ?? null
+      const target = (rootEl || document.querySelector('#app')) as HTMLElement | null
+      if (!target) {
+        console.warn('[vfit] Target element not found, scale observer not started.')
+        return
+      }
       fitScaleObserver = observeScale(target, options.designHeight ?? 1080, (v) => { fitScale.value = v }, options.scaleMode ?? 'auto', options.designWidth ?? 1920)
       app.provide(FitScaleKey, fitScale)
-      ;(app.config.globalProperties as any).$fitScale = fitScale
+      app.config.globalProperties.$fitScale = fitScale
       app.component('FitContainer', FitContainer)
       app.component('vfit-lt', VFitLT)
       app.component('vfit-rt', VFitRT)
@@ -34,3 +39,4 @@ export function createFitScale(options: FitScaleOptions = {}) {
 
 export { FitContainer, VFitLT, VFitRT, VFitLB, VFitRB, VFitCenter }
 export { useFitScale } from './useFitScale'
+export type { FitPositionProps } from './useFitPosition'

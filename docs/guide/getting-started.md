@@ -11,7 +11,6 @@ npm i vfit
 ```ts
 // main.ts
 import { createFitScale } from 'vfit'
-import 'vfit/style.css'
 
 app.use(createFitScale({ target: '#app', designHeight: 1080, designWidth: 1920, scaleMode: 'auto' }))
 ```
@@ -43,6 +42,6 @@ app.use(createFitScale({ target: '#app', designHeight: 1080, designWidth: 1920, 
 - 父容器需设置定位属性：`position: relative`（推荐）或 `absolute`
 - 两种坐标单位：
   - `%`：位置不随缩放变化，适合居中/相对位置
-  - `px`：位置随缩放乘积变化，适合固定像素布局
+  - `px`：四边位置（`top`/`left`/`right`/`bottom`）均随缩放乘积变化，适合固定像素布局
 
 

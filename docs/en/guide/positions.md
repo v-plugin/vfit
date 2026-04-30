@@ -3,7 +3,7 @@
 ## Percentage vs Pixel
 
 - Percentage: Position is unaffected by scaling, suitable for relative layout (centering, corner offsets).
-- Pixel: Position is affected by scaling, `top/left` is proportional to scaling, `right/bottom` maintains actual pixel distance.
+- Pixel: All four sides (`top`/`left`/`right`/`bottom`) scale uniformly with the global scale value, ensuring accurate spacing relative to the design across all resolutions.
 
 ## Corner Combinations
 

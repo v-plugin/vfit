@@ -48,8 +48,7 @@
       "types": "./dist/index.d.ts",
       "import": "./dist/fitscale.es.js",
       "require": "./dist/fitscale.umd.js"
-    },
-    "./style.css": "./dist/style.css"
+    }
   },
   "files": [
     "dist",

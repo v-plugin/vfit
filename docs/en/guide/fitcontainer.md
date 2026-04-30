@@ -6,14 +6,12 @@
 
 - `top/bottom/left/right?: number`
 - `unit?: 'px' | '%'` (default `px`)
-- `scale?: number` (overrides global scale)
+- `scale?: number` (overrides global scale; pass `0` or omit to use global `fitScale`)
 - `z?: number` (default `300`)
 
 ## Behavior
 
-- When using `unit='px'`:
-  - `top/left` change with scaling (value multiplied by `scale`)
-  - `right/bottom` do not change with scaling (keep actual screen pixel distance)
+- When using `unit='px'`: All four sides (`top`/`left`/`right`/`bottom`) are multiplied by the scale value, ensuring proportional spacing relative to the design.
 - When using `unit='%'`: Position does not change with scaling, only content scales.
 
 ## Origin (transform-origin)

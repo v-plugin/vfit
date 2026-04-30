@@ -11,7 +11,6 @@ npm i vfit
 ```ts
 // main.ts
 import { createFitScale } from 'vfit'
-import 'vfit/style.css'
 
 app.use(createFitScale({ target: '#app', designHeight: 1080, designWidth: 1920, scaleMode: 'auto' }))
 ```
@@ -43,4 +42,4 @@ We recommend using **Dedicated Positioning Components** (like `vfit-lt`) for qui
 - The parent container must set positioning properties: `position: relative` (recommended) or `absolute`
 - Two coordinate units:
   - `%`: Position does not change with scaling, suitable for centering/relative positioning
-  - `px`: Position changes with the scaling product, suitable for fixed pixel layout
+  - `px`: All four sides (`top`/`left`/`right`/`bottom`) scale with the global scale value, suitable for fixed pixel layout

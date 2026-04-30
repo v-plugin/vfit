@@ -12,8 +12,6 @@ export default defineConfig({
     },
     minify: 'terser',
     terserOptions: {
-      mangle: true,
-      compress: false,
       format: { comments: false }
     },
     rollupOptions: {

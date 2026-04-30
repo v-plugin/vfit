@@ -1,12 +1,21 @@
 import { reactive, watch, inject, ref, computed } from 'vue'
 import { FitScaleKey } from './useFitScale'
 
-export function useFitPosition(props: any, options: {
+export interface FitPositionProps {
+  scale?: number
+  top?: number
+  bottom?: number
+  left?: number
+  right?: number
+  unit?: string
+}
+
+export function useFitPosition(props: FitPositionProps, options: {
   origin?: string
-  scaleKeys?: string[]
+  scaleKeys?: Array<'top' | 'bottom' | 'left' | 'right'>
   extraTransform?: string
 } = {}) {
-  const position = reactive({
+  const position: Record<'scale' | 'top' | 'bottom' | 'left' | 'right', string> = reactive({
     scale: `scale(1) translateZ(0)`,
     top: 'auto',
     bottom: 'auto',
@@ -39,14 +48,14 @@ export function useFitPosition(props: any, options: {
     const s = props.scale && props.scale > 0 ? props.scale : fitScale?.value ?? 1
     const baseTransform = `scale(${s}) translateZ(0)`
     position.scale = options.extraTransform ? `${baseTransform} ${options.extraTransform}` : baseTransform
-    const styleKey = ['top', 'bottom', 'left', 'right']
+    const styleKey = ['top', 'bottom', 'left', 'right'] as const
     styleKey.forEach((key) => {
-      const val = (props as any)[key]
+      const val = props[key]
       if (props.unit === '%') {
-        (position as any)[key] = val == undefined ? 'auto' : `${val}${props.unit}`
+        position[key] = val == undefined ? 'auto' : `${val}${props.unit}`
       } else {
         const needScale = options.scaleKeys ? options.scaleKeys.includes(key) : true
-        ; (position as any)[key] = val == undefined ? 'auto' : `${needScale ? val * s : val}${props.unit}`
+        position[key] = val == undefined ? 'auto' : `${needScale ? val * s : val}${props.unit}`
       }
     })
   }, { immediate: true })

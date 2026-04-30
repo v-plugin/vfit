@@ -6,14 +6,12 @@
 
 - `top/bottom/left/right?: number`
 - `unit?: 'px' | '%'`（默认 `px`）
-- `scale?: number`（覆盖全局缩放）
+- `scale?: number`（自定义缩放因子，传 `0` 或不传则使用全局 `fitScale`）
 - `z?: number`（默认 `300`）
 
 ## 行为
 
-- 使用 `unit='px'` 时：
-  - `top/left` 随缩放变化（值乘以 `scale`）
-  - `right/bottom` 不随缩放变化（保持屏幕实际像素距离）
+- 使用 `unit='px'` 时：四边位置（`top`/`left`/`right`/`bottom`）均随缩放变化（值乘以 `scale`），确保元素按比例贴合设计稿。
 - 使用 `unit='%'` 时：位置不随缩放变化，仅内容缩放。
 
 

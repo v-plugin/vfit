@@ -5,7 +5,7 @@ export function observeScale(
   scaleMode: 'height' | 'width' | 'auto' = 'auto',
   designWidth: number = 1920
 ): ResizeObserver {
-  const observer = new ResizeObserver((entries: any) => {
+  const observer = new ResizeObserver((entries: ResizeObserverEntry[]) => {
     for (const entry of entries) {
       const rectHeight = entry.contentRect.height
       const rectWidth = entry.contentRect.width
