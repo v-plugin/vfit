@@ -7,7 +7,7 @@ const props = defineProps({
 })
 
 const { position, origin } = useFitPosition(props, {
-  origin: '50% 50%',
+  origin: '0 0',
   scaleKeys: [], // No positioning props to scale
   extraTransform: 'translate(-50%, -50%)'
 })
@@ -25,7 +25,7 @@ const { position, origin } = useFitPosition(props, {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform-origin: 50% 50%;
+  transform-origin: 0 0;
   z-index: 300;
   will-change: transform;
   backface-visibility: hidden;

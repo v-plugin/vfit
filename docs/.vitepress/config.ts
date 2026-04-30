@@ -6,7 +6,7 @@ export default defineConfig({
   description: 'Vue 3 可视化大屏适配方案，提供 FitContainer 组件与 v-fit 指令，支持大屏自适应缩放与像素级精准定位。',
   
   // SEO & URL Optimization
-  cleanUrls: true,
+  cleanUrls: false,
   lastUpdated: true,
   sitemap: {
     hostname: 'https://web-vfit.netlify.app'
