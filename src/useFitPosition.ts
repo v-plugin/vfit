@@ -45,7 +45,7 @@ export function useFitPosition(props: any, options: {
       if (props.unit === '%') {
         (position as any)[key] = val == undefined ? 'auto' : `${val}${props.unit}`
       } else {
-        const needScale = options.scaleKeys ? options.scaleKeys.includes(key) : (key === 'left' || key === 'top')
+        const needScale = options.scaleKeys ? options.scaleKeys.includes(key) : true
         ; (position as any)[key] = val == undefined ? 'auto' : `${needScale ? val * s : val}${props.unit}`
       }
     })
