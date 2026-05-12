@@ -11,9 +11,14 @@ npm i vfit
 ```ts
 // main.ts
 import { createFitScale } from 'vfit'
+import 'vfit/style.css' // 必须引入样式文件
 
 app.use(createFitScale({ target: '#app', designHeight: 1080, designWidth: 1920, scaleMode: 'auto' }))
 ```
+
+::: warning 重要提示
+首次使用时必须在入口文件引入样式：`import 'vfit/style.css'`，否则组件样式会丢失。
+:::
 
 ## 第一个容器
 

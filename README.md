@@ -17,6 +17,7 @@ npm i vfit
 ```ts
 // main.ts
 import { createFitScale } from 'vfit'
+import 'vfit/style.css' // 必须引入样式文件
 
 
 app.use(createFitScale({ target: '#app', designHeight: 1080, designWidth: 1920, scaleMode: 'auto' }))
@@ -88,9 +89,9 @@ app.use(createFitScale({ target: '#app', designHeight: 1080, designWidth: 1920, 
 
 ## 小贴士
 
+- **重要**：首次使用时必须在入口文件引入样式：`import 'vfit/style.css'`
 - 使用 `unit='px'` 时，`top/left` 随缩放变化，`right/bottom` 保持实际像素距离不变
 - 使用 `right` 时，缩放原点为右上角；同时设置 `bottom` 与 `right` 时为右下角
-- 首次接入时，务必引入样式：`import 'vfit/style.css'`
 
 ## React 支持
 

@@ -11,9 +11,14 @@ npm i vfit
 ```ts
 // main.ts
 import { createFitScale } from 'vfit'
+import 'vfit/style.css' // Must import styles
 
 app.use(createFitScale({ target: '#app', designHeight: 1080, designWidth: 1920, scaleMode: 'auto' }))
 ```
+
+::: warning Important
+You must import the styles in your entry file: `import 'vfit/style.css'`, otherwise component styles will be missing.
+:::
 
 ## Your First Container
 
