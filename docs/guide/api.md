@@ -1,3 +1,8 @@
+---
+title: API 参考
+description: vfit 完整 API 文档，包含 createFitScale 选项、useFitScale 用法、FitContainer 及所有专用定位组件的属性说明。
+---
+
 # API
 
 ## `createFitScale(options)`

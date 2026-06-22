@@ -1,3 +1,8 @@
+---
+title: FitContainer 组件
+description: FitContainer 是 vfit 的通用绝对定位容器，支持像素/百分比双模式、四边定位和自定义缩放比例，适合复杂大屏布局场景。
+---
+
 # FitContainer
 
 `FitContainer` 是绝对定位并按全局缩放值进行缩放的容器组件。常见四角或居中布局推荐使用专用定位组件（`vfit-lt` / `vfit-rt` / `vfit-lb` / `vfit-rb` / `vfit-center`），代码更简洁。

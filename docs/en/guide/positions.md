@@ -1,3 +1,8 @@
+---
+title: Positioning & Origin
+description: Learn vfit's pixel vs percent coordinate modes, four-corner positioning combinations, and automatic transform-origin detection for precise big-screen layout reproduction.
+---
+
 # Positioning & Origin
 
 ## Percentage vs Pixel

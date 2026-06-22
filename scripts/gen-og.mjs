@@ -1,0 +1,154 @@
+/**
+ * 生成 OG 图（1200×630 PNG）
+ * 依赖：sharp（仅用于转换）
+ * 运行：node scripts/gen-og.mjs
+ */
+import { writeFileSync, readFileSync } from 'fs'
+import { fileURLToPath } from 'url'
+import path from 'path'
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url))
+const outDir = path.resolve(__dirname, '../docs/public')
+
+// 中文版 OG SVG
+const zhSvg = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e3a5f"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#3b82f6"/>
+      <stop offset="100%" stop-color="#06b6d4"/>
+    </linearGradient>
+  </defs>
+
+  <!-- 背景 -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- 装饰格线 -->
+  <g opacity="0.06" stroke="#fff" stroke-width="1">
+    <line x1="0" y1="105" x2="1200" y2="105"/>
+    <line x1="0" y1="210" x2="1200" y2="210"/>
+    <line x1="0" y1="315" x2="1200" y2="315"/>
+    <line x1="0" y1="420" x2="1200" y2="420"/>
+    <line x1="0" y1="525" x2="1200" y2="525"/>
+    <line x1="150" y1="0" x2="150" y2="630"/>
+    <line x1="300" y1="0" x2="300" y2="630"/>
+    <line x1="450" y1="0" x2="450" y2="630"/>
+    <line x1="600" y1="0" x2="600" y2="630"/>
+    <line x1="750" y1="0" x2="750" y2="630"/>
+    <line x1="900" y1="0" x2="900" y2="630"/>
+    <line x1="1050" y1="0" x2="1050" y2="630"/>
+  </g>
+
+  <!-- 顶部渐变条 -->
+  <rect x="0" y="0" width="1200" height="5" fill="url(#accent)"/>
+
+  <!-- logo 图标区域（右侧装饰方块） -->
+  <rect x="860" y="160" width="240" height="240" rx="24" fill="#1d4ed8" opacity="0.15"/>
+  <rect x="900" y="200" width="160" height="160" rx="16" fill="#3b82f6" opacity="0.25"/>
+  <text x="980" y="298" font-family="monospace" font-size="72" fill="#60a5fa" text-anchor="middle" opacity="0.9">v</text>
+
+  <!-- 主标题 -->
+  <text x="100" y="245" font-family="-apple-system, BlinkMacSystemFont, 'PingFang SC', sans-serif"
+        font-size="88" font-weight="700" fill="#ffffff" letter-spacing="-2">vfit.js</text>
+
+  <!-- 渐变下划线 -->
+  <rect x="100" y="265" width="320" height="5" rx="2.5" fill="url(#accent)"/>
+
+  <!-- 副标题 -->
+  <text x="100" y="340" font-family="-apple-system, BlinkMacSystemFont, 'PingFang SC', sans-serif"
+        font-size="32" fill="#94a3b8">可视化大屏适配方案</text>
+
+  <!-- 描述文字 -->
+  <text x="100" y="400" font-family="-apple-system, BlinkMacSystemFont, 'PingFang SC', sans-serif"
+        font-size="22" fill="#64748b">专为 Vue 3 大屏数据可视化设计，自适应缩放 + 精准定位</text>
+
+  <!-- 底部标签 -->
+  <rect x="100" y="460" width="110" height="38" rx="6" fill="#1d4ed8" opacity="0.6"/>
+  <text x="155" y="484" font-family="monospace" font-size="18" fill="#93c5fd" text-anchor="middle">Vue 3</text>
+
+  <rect x="226" y="460" width="80" height="38" rx="6" fill="#0e7490" opacity="0.6"/>
+  <text x="266" y="484" font-family="monospace" font-size="18" fill="#67e8f9" text-anchor="middle">npm</text>
+
+  <rect x="322" y="460" width="140" height="38" rx="6" fill="#065f46" opacity="0.6"/>
+  <text x="392" y="484" font-family="monospace" font-size="18" fill="#6ee7b7" text-anchor="middle">大屏适配</text>
+
+  <!-- 底部域名 -->
+  <text x="1100" y="590" font-family="monospace" font-size="20" fill="#475569" text-anchor="end">vfit.raychart.cn</text>
+</svg>`
+
+// 英文版 OG SVG
+const enSvg = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e3a5f"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#3b82f6"/>
+      <stop offset="100%" stop-color="#06b6d4"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <g opacity="0.06" stroke="#fff" stroke-width="1">
+    <line x1="0" y1="105" x2="1200" y2="105"/>
+    <line x1="0" y1="210" x2="1200" y2="210"/>
+    <line x1="0" y1="315" x2="1200" y2="315"/>
+    <line x1="0" y1="420" x2="1200" y2="420"/>
+    <line x1="0" y1="525" x2="1200" y2="525"/>
+    <line x1="150" y1="0" x2="150" y2="630"/>
+    <line x1="300" y1="0" x2="300" y2="630"/>
+    <line x1="450" y1="0" x2="450" y2="630"/>
+    <line x1="600" y1="0" x2="600" y2="630"/>
+    <line x1="750" y1="0" x2="750" y2="630"/>
+    <line x1="900" y1="0" x2="900" y2="630"/>
+    <line x1="1050" y1="0" x2="1050" y2="630"/>
+  </g>
+
+  <rect x="0" y="0" width="1200" height="5" fill="url(#accent)"/>
+
+  <rect x="860" y="160" width="240" height="240" rx="24" fill="#1d4ed8" opacity="0.15"/>
+  <rect x="900" y="200" width="160" height="160" rx="16" fill="#3b82f6" opacity="0.25"/>
+  <text x="980" y="298" font-family="monospace" font-size="72" fill="#60a5fa" text-anchor="middle" opacity="0.9">v</text>
+
+  <text x="100" y="245" font-family="-apple-system, BlinkMacSystemFont, Arial, sans-serif"
+        font-size="88" font-weight="700" fill="#ffffff" letter-spacing="-2">vfit.js</text>
+
+  <rect x="100" y="265" width="320" height="5" rx="2.5" fill="url(#accent)"/>
+
+  <text x="100" y="340" font-family="-apple-system, BlinkMacSystemFont, Arial, sans-serif"
+        font-size="32" fill="#94a3b8">Big Screen Adapter for Vue 3</text>
+
+  <text x="100" y="400" font-family="-apple-system, BlinkMacSystemFont, Arial, sans-serif"
+        font-size="22" fill="#64748b">Auto-scale components for any resolution · Precise positioning</text>
+
+  <rect x="100" y="460" width="110" height="38" rx="6" fill="#1d4ed8" opacity="0.6"/>
+  <text x="155" y="484" font-family="monospace" font-size="18" fill="#93c5fd" text-anchor="middle">Vue 3</text>
+
+  <rect x="226" y="460" width="80" height="38" rx="6" fill="#0e7490" opacity="0.6"/>
+  <text x="266" y="484" font-family="monospace" font-size="18" fill="#67e8f9" text-anchor="middle">npm</text>
+
+  <rect x="322" y="460" width="160" height="38" rx="6" fill="#065f46" opacity="0.6"/>
+  <text x="402" y="484" font-family="monospace" font-size="18" fill="#6ee7b7" text-anchor="middle">Big Screen</text>
+
+  <text x="1100" y="590" font-family="monospace" font-size="20" fill="#475569" text-anchor="end">vfit.raychart.cn</text>
+</svg>`
+
+writeFileSync(path.join(outDir, 'og-image.svg'), zhSvg, 'utf-8')
+writeFileSync(path.join(outDir, 'og-image-en.svg'), enSvg, 'utf-8')
+console.log('✓ SVG OG images written')
+
+// 尝试用 sharp 转 PNG
+try {
+  const sharp = (await import('sharp')).default
+  await sharp(Buffer.from(zhSvg)).png().toFile(path.join(outDir, 'og-image.png'))
+  await sharp(Buffer.from(enSvg)).png().toFile(path.join(outDir, 'og-image-en.png'))
+  console.log('✓ PNG OG images generated via sharp')
+} catch {
+  console.log('⚠ sharp not available, installing...')
+  process.exit(1)
+}

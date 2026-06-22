@@ -1,3 +1,9 @@
+---
+title: 赞助与支持
+description: 赞助 vfit 开源项目，支持持续开发与维护。
+robots: noindex, follow
+---
+
 # 赞助与支持
 
 天凉了，我想买条秋裤... 🥶

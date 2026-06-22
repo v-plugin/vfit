@@ -1,3 +1,8 @@
+---
+title: 快速上手
+description: 5 分钟接入 vfit：安装、初始化 createFitScale，用 vfit-lt 等专用组件实现 Vue 3 大屏自适应缩放布局。
+---
+
 # 快速上手
 
 ## 安装
@@ -49,4 +54,9 @@ app.use(createFitScale({ target: '#app', designHeight: 1080, designWidth: 1920, 
   - `%`：位置不随缩放变化，适合居中/相对位置
   - `px`：四边位置（`top`/`left`/`right`/`bottom`）均随缩放乘积变化，适合固定像素布局
 
+## 下一步
 
+- [FitContainer 通用组件](/guide/fitcontainer) — 需要四边同时定位或兼容旧代码时使用
+- [定位与原点](/guide/positions) — 深入理解像素/百分比模式与 transform-origin 自动推导
+- [缩放模式](/guide/scale-modes) — 了解 `height` / `width` / `auto` 三种模式的适用场景
+- [API 参考](/guide/api) — 完整参数说明

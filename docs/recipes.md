@@ -1,5 +1,7 @@
 ---
 aside: false
+title: 示例与场景
+description: vfit 全部使用场景演示：五种定位组件（vfit-lt/rt/lb/rb/center）、像素与百分比单位、自定义缩放及 z-index 层级，含交互式布局实验台。
 ---
 
 # 示例与场景
@@ -234,4 +236,3 @@ aside: false
   <div class="box ct">百分比居中</div>
   <div class="tag">top:50% left:50%</div>
 </div>
-```

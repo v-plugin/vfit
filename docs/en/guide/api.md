@@ -1,3 +1,8 @@
+---
+title: API Reference
+description: Complete vfit API docs — createFitScale options, useFitScale usage, FitContainer props, and all dedicated positioning components (vfit-lt, vfit-rt, vfit-lb, vfit-rb, vfit-center).
+---
+
 # API
 
 ## `createFitScale(options)`

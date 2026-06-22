@@ -1,3 +1,9 @@
+---
+title: Sponsor & Support
+description: Sponsor the vfit open-source project to support ongoing development and maintenance.
+robots: noindex, follow
+---
+
 # Sponsor & Support
 
 It's getting cold, I want to buy a pair of long johns... 🥶

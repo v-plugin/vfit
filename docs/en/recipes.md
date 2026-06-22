@@ -1,5 +1,7 @@
 ---
 aside: false
+title: Recipes & Scenarios
+description: All vfit usage scenarios — five positioning components (vfit-lt/rt/lb/rb/center), pixel vs percent units, custom scale, z-index layering, and an interactive layout playground.
 ---
 
 # Recipes & Scenarios
@@ -234,5 +236,3 @@ Use when all four sides are needed or for backward compatibility:
   <div class="box ct">Percent centered</div>
   <div class="tag">top:50% left:50%</div>
 </div>
-
-```

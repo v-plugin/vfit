@@ -1,3 +1,8 @@
+---
+title: Getting Started
+description: Get vfit running in 5 minutes — install, initialize createFitScale, and use vfit-lt and other dedicated components for auto-scaling Vue 3 big-screen layouts.
+---
+
 # Getting Started
 
 ## Installation
@@ -48,3 +53,10 @@ We recommend using **Dedicated Positioning Components** (like `vfit-lt`) for qui
 - Two coordinate units:
   - `%`: Position does not change with scaling, suitable for centering/relative positioning
   - `px`: All four sides (`top`/`left`/`right`/`bottom`) scale with the global scale value, suitable for fixed pixel layout
+
+## Next Steps
+
+- [FitContainer Component](/en/guide/fitcontainer) — use when all four sides are needed or for backward compatibility
+- [Positioning & Origin](/en/guide/positions) — deep dive into pixel/percent modes and automatic transform-origin detection
+- [Scale Modes](/en/guide/scale-modes) — learn when to use `height`, `width`, or `auto`
+- [API Reference](/en/guide/api) — complete parameter documentation

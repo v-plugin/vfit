@@ -1,3 +1,8 @@
+---
+title: Scale Modes
+description: Learn about vfit's three scale modes — height, width, and auto — and how to choose the right one for different big-screen aspect ratios and resolutions.
+---
+
 # Scale Modes
 
 Global scaling is provided by `createFitScale`, which uses `ResizeObserver` internally to calculate the scale value.

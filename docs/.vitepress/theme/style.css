@@ -83,90 +83,252 @@
 .sponsor-title { font-size: 18px; font-weight: 600; color: var(--vp-c-text-1); }
 .sponsor-desc { font-size: 14px; color: var(--vp-c-text-2); text-align: center; line-height: 1.5; }
 
-.vfit-popup-mask {
+
+/* ══════════════════════════════════════
+   Zipoly Promo Modal
+   ══════════════════════════════════════ */
+
+.zp-mask {
   position: fixed;
   inset: 0;
   z-index: 9999;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(0, 0, 0, 0.45);
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  animation: zp-fade 0.22s ease both;
+}
+@keyframes zp-fade {
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }
 
-.vfit-popup {
-  width: min(520px, calc(100vw - 32px));
-  border-radius: 16px;
-  border: 1px solid var(--vp-c-divider);
-  background: var(--vp-c-bg);
-  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.3);
-  padding: 20px;
+/* ── 卡片容器 ── */
+.zp-card {
+  width: min(400px, calc(100vw - 28px));
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 32px 80px rgba(0,0,0,0.45), 0 0 0 1px rgba(255,255,255,0.06);
+  animation: zp-pop 0.38s cubic-bezier(0.34, 1.45, 0.64, 1) both;
+  position: relative;
+}
+@keyframes zp-pop {
+  from { opacity: 0; transform: scale(0.88) translateY(16px); }
+  to   { opacity: 1; transform: scale(1)    translateY(0);    }
 }
 
-.vfit-popup-title {
-  font-size: 18px;
-  font-weight: 700;
-  color: var(--vp-c-text-1);
+/* ── Hero：深色沉浸区 ── */
+.zp-hero {
+  position: relative;
+  background: #0b1a12;
+  padding: 28px 28px 24px;
+  overflow: hidden;
 }
 
-.vfit-popup-desc {
-  margin-top: 10px;
-  font-size: 14px;
-  line-height: 1.7;
-  color: var(--vp-c-text-2);
+/* 网格纹理 */
+.zp-hero-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(66,184,131,0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(66,184,131,0.08) 1px, transparent 1px);
+  background-size: 28px 28px;
+  pointer-events: none;
 }
 
-.vfit-popup-actions {
-  margin-top: 16px;
-  display: flex;
-  justify-content: flex-end;
-  gap: 10px;
+/* 右上光晕 */
+.zp-hero-glow {
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(66,184,131,0.22) 0%, transparent 70%);
+  pointer-events: none;
 }
 
-.vfit-popup-links {
-  margin-top: 12px;
-  display: grid;
-  gap: 10px;
-}
-
-.vfit-popup-link {
-  width: 100%;
-  border: 1px solid var(--vp-c-divider);
-  border-radius: 12px;
-  background: var(--vp-c-bg-soft);
-  padding: 12px;
-  text-align: left;
+/* 关闭按钮 */
+.zp-card-x {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 2;
+  width: 28px;
+  height: 28px;
+  border: 1px solid rgba(255,255,255,0.15);
+  background: rgba(255,255,255,0.08);
   cursor: pointer;
-}
-
-.vfit-popup-link-title {
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--vp-c-text-1);
-}
-
-.vfit-popup-link-url {
-  margin-top: 4px;
-  font-size: 12px;
-  color: var(--vp-c-text-2);
-}
-
-.vfit-popup-btn {
-  border: 1px solid transparent;
-  border-radius: 10px;
-  padding: 8px 14px;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1;
-  cursor: pointer;
+  color: rgba(255,255,255,0.6);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  transition: background 0.15s, color 0.15s;
+}
+.zp-card-x:hover {
+  background: rgba(255,255,255,0.16);
+  color: #fff;
 }
 
-.vfit-popup-btn.ghost {
-  border-color: var(--vp-c-divider);
+.zp-hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+/* 标签徽章 */
+.zp-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: #6ee7b7;
+  background: rgba(66,184,131,0.15);
+  border: 1px solid rgba(66,184,131,0.3);
+  margin-bottom: 12px;
+}
+.zp-tag::before {
+  content: '';
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #42b883;
+  box-shadow: 0 0 6px #42b883;
+}
+
+/* 标题 */
+.zp-title {
+  font-size: 22px;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.25;
+  letter-spacing: -0.3px;
+  margin: 0 0 20px;
+  padding-right: 32px;
+}
+
+/* 数字指标 */
+.zp-stats {
+  display: flex;
+  align-items: center;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px;
+  padding: 12px 0;
+}
+.zp-stat {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+.zp-stat-num {
+  font-size: 24px;
+  font-weight: 900;
+  background: linear-gradient(135deg, #42b883, #06b6d4);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  line-height: 1;
+  letter-spacing: -0.5px;
+}
+.zp-stat-label {
+  font-size: 10px;
+  color: rgba(255,255,255,0.45);
+  text-align: center;
+  letter-spacing: 0.2px;
+}
+.zp-stat-sep {
+  width: 1px;
+  height: 32px;
+  background: rgba(255,255,255,0.1);
+  flex-shrink: 0;
+}
+
+/* ── Body：亮色区 ── */
+.zp-body {
+  background: var(--vp-c-bg, #fff);
+  padding: 20px 24px 22px;
+}
+
+/* Feature pills */
+.zp-pills {
+  list-style: none;
+  margin: 0 0 18px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.zp-pill {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--vp-c-text-2);
+  line-height: 1.4;
+}
+.zp-pill-dot {
+  flex-shrink: 0;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #42b883;
+}
+
+/* 按钮组 */
+.zp-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.zp-btn-primary {
+  flex: 1;
+  padding: 11px 0;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  border: none;
+  background: linear-gradient(135deg, #42b883 0%, #2da870 100%);
+  color: #fff;
+  letter-spacing: 0.2px;
+  box-shadow: 0 4px 14px rgba(66,184,131,0.35);
+  transition: opacity 0.15s, transform 0.15s;
+}
+.zp-btn-primary:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+.zp-btn-primary:active {
+  transform: translateY(0);
+}
+
+.zp-btn-ghost {
+  flex: 0 0 auto;
+  padding: 11px 18px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
   background: transparent;
   color: var(--vp-c-text-2);
+  border: 1px solid var(--vp-c-divider, #e5e7eb);
+  transition: border-color 0.15s, color 0.15s;
 }
-
-.vfit-popup-btn.primary {
-  border-color: var(--vp-c-brand-1);
-  background: var(--vp-c-brand-1);
-  color: #fff;
+.zp-btn-ghost:hover {
+  border-color: var(--vp-c-text-2);
+  color: var(--vp-c-text-1);
 }

@@ -1,3 +1,8 @@
+---
+title: 缩放模式
+description: 介绍 vfit 的三种缩放模式：height（按高缩放）、width（按宽缩放）和 auto（自动选择），适配不同比例的大屏分辨率需求。
+---
+
 # 缩放模式
 
 全局缩放由 `createFitScale` 提供，内部使用 `ResizeObserver` 计算缩放值。

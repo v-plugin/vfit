@@ -1,6 +1,6 @@
 {
   "name": "vfit",
-  "version": "2.0.4",
+  "version": "2.0.5",
   "description": "A tiny Vue 3 plugin to auto-fit UI scale based on container size, plus a FitContainer component for easy positioning.",
   "keywords": [
     "vue3",
@@ -58,8 +58,9 @@
   "scripts": {
     "build": "vite build && tsc --emitDeclarationOnly -p tsconfig.json",
     "docs:dev": "vitepress dev docs",
-    "docs:build": "vitepress build docs",
-    "docs:preview": "vitepress preview docs"
+    "docs:build": "node scripts/gen-og.mjs && vitepress build docs",
+    "docs:preview": "vitepress preview docs",
+    "gen:og": "node scripts/gen-og.mjs"
   },
   "pnpm": {
     "overrides": {}
@@ -70,6 +71,7 @@
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.0.4",
     "echarts": "^6.0.0",
+    "sharp": "^0.35.2",
     "terser": "^5.31.0",
     "typescript": "^5.6.3",
     "vite": "^5.4.0",

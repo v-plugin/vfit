@@ -1,3 +1,8 @@
+---
+title: 生态链接
+description: vfit 生态圈：包括 React 版本 vfit-react、3D 可视化引擎 RayChart.js 以及流程可视化工具 Mflow。
+---
+
 # 生态链接
 
 <div class="ecosystem-cards">

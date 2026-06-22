@@ -1,3 +1,8 @@
+---
+title: 友情链接
+robots: noindex, follow
+---
+
 # 友情链接
 
 <div class="links-grid">

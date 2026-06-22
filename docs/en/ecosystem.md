@@ -1,3 +1,8 @@
+---
+title: Ecosystem
+description: The vfit ecosystem — including vfit-react for React, RayChart.js 3D visualization engine, and Mflow for process visualization.
+---
+
 # Ecosystem Links
 
 <div class="ecosystem-cards">
@@ -15,7 +20,7 @@
       <div class="eco-desc">Build easy-to-use Web 3D visualization chart engine</div>
     </div>
   </a>
-  <a class="eco-card large" href="https://web-mflow.netlify.app/" target="_blank" rel="noopener">
+  <a class="eco-card large" href="https://mflow.raychart.cn/" target="_blank" rel="noopener">
     <img class="eco-banner" src="/ecosystem/mflow-banner.png" alt="Mflow" />
     <div class="eco-body">
       <div class="eco-title">Mflow</div>

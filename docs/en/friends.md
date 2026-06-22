@@ -1,3 +1,8 @@
+---
+title: Friendly Links
+robots: noindex, follow
+---
+
 # Friendly Links
 
 <div class="links-grid">

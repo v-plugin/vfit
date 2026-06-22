@@ -1,4 +1,15 @@
+---
+title: Changelog
+description: Release notes for all vfit versions, including new features, bug fixes, and improvements.
+---
+
 # Changelog
+
+## v2.0.5
+
+- **Fix**: Fixed missing `vfit-base`, `vfit-lt` and other styles after installation.
+- **New**: Properly exported `./style.css` in `package.json` exports — users must now manually add `import 'vfit/style.css'` in their entry file.
+- **Docs**: Added style import instructions to Getting Started and README.
 
 ## v2.0.3
 
@@ -6,7 +17,6 @@
 - **Fix**: Fixed `right`/`bottom` positioning not scaling with the global scale value. All four sides now scale uniformly.
 - **New**: Exported `FitPositionProps` TS type for explicit positioning prop declarations in components.
 - **Optimization**: Extracted `.vfit-base` shared CSS class, removing duplicated `will-change`/`backface-visibility`/`perspective` styles across 6 components.
-- **Optimization**: Removed non-existent `./style.css` export from `package.json`. CSS is now injected internally.
 - **Optimization**: Added null-check for target element in `createFitScale` with console warning.
 
 ## v2.0.2
